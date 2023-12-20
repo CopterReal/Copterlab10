@@ -1,6 +1,3 @@
-//cout << "Number of data = ";
-//cout << "Mean = ";
-//cout << "Standard deviation = ";
 #include <iostream>
 #include <iomanip>
 #include <cmath>
@@ -11,19 +8,21 @@
 using namespace std;
 int main()
 {
-        int count = ________________
-        float sum = ________________
-        float sum_of_square = ________________
+        double count = 0;
+        double sum = 0;
+        double sum_of_square = 0;
+        double SD;
         string textline;
-        ifstream source(________________);
-        while (________________)
+        ifstream source("score.txt");
+        while (getline(source,textline))
         {
-                sum += ________________;
-                sum_of_square += ________________;
-                ________________++;
+                sum += atof(textline.c_str());
+                sum_of_square += pow(atof(textline.c_str()),2);
+                count++;
         }
-        cout << "Number of data = " << ________________ << "\n";
+        SD = pow(1/count*sum_of_square-pow(sum/count,2),0.5);
+        cout << "Number of data = " << count << "\n";
         cout << setprecision(3);
-        cout << "Mean = " << ________________ << "\n";
-        cout << "Standard deviation = " << ________________
+        cout << "Mean = " << sum/count << "\n";
+        cout << "Standard deviation = " << SD;
 }
