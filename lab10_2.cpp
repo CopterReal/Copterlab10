@@ -9,8 +9,16 @@ int main (){
 	source.open("cheerbook.txt") ;
 	dest.open("cheerbook_copy.txt");
 	
-	//กรอก Code เฉพาะส่วนนี้ ให้สอดคล้องกับโจทย์และ Code ส่วนอื่น ๆ 
-	//โดยห้ามแก้ไข Code ในส่วนอื่น ๆ
+	string textline;
+	getline(source,textline);
+	dest << "-------------------- BOOM ---------------------\n";
+	dest << "AR CHI\n";
+	while(getline(source,textline)){
+		cout << textline << '\n';
+	}
+	getline(source,textline);
+	dest << "-------------------- HA!! ---------------------";
+	
 
     source.close();
     dest.close();
